@@ -1,0 +1,150 @@
+.button_group .slider_box {
+  outline: none;
+  border: none;
+  z-index: 1;
+  position: relative;
+  color: white;
+  background: #40a9ff;
+  padding: 0.5em 1em;
+}
+.button_group .slider_box::before {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fa541c;
+  transform-origin: center bottom;
+  transform: scaleY(0);
+  transition: transform 0.4s ease-in-out;
+}
+
+.button_group .slider_box:hover {
+  cursor: pointer;
+}
+.button_group .slider_box:hover::before {
+  transform-origin: center top;
+  transform: scaleY(1);
+}
+
+.button_group .jelly_box {
+  z-index: 1;
+  color: #fff;
+  background: #40a9ff;
+  outline: none;
+  border: none;
+  padding: 0.5em 1em;
+}
+
+.button_group .jelly_box:hover {
+  cursor: pointer;
+  animation: jelly 0.5s;
+}
+@keyframes jelly {
+  0%,
+  100% {
+    transform: scale(1, 1);
+  }
+  25%,
+  75% {
+    transform: scale(0.9, 1.1);
+  }
+  50% {
+    transform: scale(1.1, 0.9);
+  }
+}
+
+.button_group .pulse_box {
+  position: relative;
+  z-index: 1;
+  border: none;
+  outline: none;
+  padding: 0.5em 1em;
+  color: #fff;
+  background-color: #1890ff;
+}
+.button_group .pulse_box:hover {
+  cursor: pointer;
+}
+.button_group .pulse_box::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border: 4px solid #1890ff;
+  transform: scale(1);
+  transform-origin: center;
+}
+.button_group .pulse_box:hover::before {
+  transition: all 0.5s ease-out;
+  border: 1px solid #e6f7ff;
+  transform: scale(1.25);
+  opacity: 0;
+}
+
+.button_group .light_box {
+  outline: none;
+  border: none;
+  z-index: 1;
+  position: relative;
+  color: white;
+  background: #262626;
+  padding: 0.5em 1em;
+  overflow: hidden;
+  --shine-width: 1.25em;
+}
+
+.button_group .light_box::after {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  background: #595959;
+  top: -50%;
+  left: 0%;
+  bottom: -50%;
+  width: 1.25em;
+  transform: translate3d(-200%, 0, 0) rotate(35deg);
+}
+
+.button_group .light_box:hover {
+  cursor: pointer;
+}
+.button_group .light_box:hover::after {
+  transition: transform 0.5s ease-in-out;
+  transform: translate3d(500%, 0, 0) rotate(35deg);
+}
+
+.button_group .bubble_box {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  position: relative;
+  padding: 0.5em 1em;
+  background-color: #40a9ff;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.button_group .bubble_box::before {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  background-color: #9254de;
+  transform-origin: center;
+  transform: translate3d(-50%, -50%, 0) scale(0, 0);
+  transition: transform 0.45s ease-in-out;
+}
+
+.button_group .bubble_box:hover::before {
+  transform: translate3d(-50%, -50%, 0) scale(15,15);
+}
